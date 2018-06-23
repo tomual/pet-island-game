@@ -30,60 +30,20 @@
         box-shadow: 5px 15px 25px #99baf0;
     }
 
-    .pet .head {
-        background: #666;
-        height: 90px;
-        width: 100px;
-        left: 0;
+    .pet svg{
+        top: -170px;
         position: absolute;
-        border-radius: 100px;
-        background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
-
-        -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
-        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        left: 40px;
     }
 
-    .pet .body {
-        background: #666;
-        background-image: none;
-        height: 93px;
-        width: 87px;
-        top: 44px;
-        position: absolute;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
-        -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
-        border-radius: 50% 80% 50% 50% / 80% 80% 50% 40%;
-        left: 5px;
-    }
 
-    .pet {
-        position: relative;
-        top: -40px;
-        left: 145px;
-    }
-
-    .ear {
-        width: 50px;
-        height: 50px;
-        background: #ff924b;
-        display: block;
-        -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
-        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-        left: -13px;
-        top: -10px;
-        transform: rotate(-50deg);
-        position: absolute;
-    }
-
-    .ear2 {
-        left: 53px;
-        top: -13px;
-        background: #fe8953;
-        transform: rotate(30deg);
+    [inkscape\:label=body] path,
+    [inkscape\:label=ears] path,
+    [inkscape\:label=head] path,
+    [inkscape\:label=arm1] path,
+    [inkscape\:label=arm2] path,
+    [inkscape\:label=leg1] path,
+    [inkscape\:label=leg2] path {
     }
 
     .bean a {
@@ -102,11 +62,7 @@
 <div class="world">
     <div class="land">
         <div class="pet">
-            <div class="body"></div>
-            <div class="ear ear1"></div>
-            <div class="ear ear2"></div>
-            <div class="head">
-            </div>
+            <?php $this->load->view('pets/pet.svg') ?>
         </div>
         <div class="bean">
             <a href="<?php echo base_url('collect/bean') ?>"></a>
