@@ -1,30 +1,45 @@
-var headMovePixels = 0;
-var headRotatePixels = 0;
-var bodyMovePixels = 0;
-var armMovePixels = 0;
-var armRotatePixels = 0;
+var head = anime({
+    targets: '#layer11',
+    translateY: 3,
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine',
+    duration: 1000,
+    delay: 300
+});
+var arm1 = anime({
+    targets: '#layer4',
+    translateY: 2,
+    translateX: -2,
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine',
+    duration: 1000,
+    delay: 300
+});
+var arm2 = anime({
+    targets: '#layer5',
+    translateY: 2,
+    translateX: -2,
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine',
+    duration: 1000,
+    delay: 300
+});
+var body = anime({
+    targets: '#layer9',
+    translateY: 1,
+    translateX: -1,
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine',
+    duration: 1000,
+    delay: 300
+});
 $(document).ready(function() {
-    breathe();
     blink();
 });
-
-function breathe() {
-    headMovePixels = headMovePixels ? 0 : 3;
-    bodyMovePixels = bodyMovePixels ? 0 : -2;
-    armMovePixels = armMovePixels ? 0 : -2;
-    armRotatePixels = armRotatePixels ? 0 : 0.5;
-    headRotatePixels = headRotatePixels ? 0 : 0.5;
-    $('[inkscape\\:label=body]').css('top', bodyMovePixels);
-    $('[inkscape\\:label=top]').css('top', headMovePixels);
-    $('[inkscape\\:label=top]').css('transform', 'rotate(' + headRotatePixels + 'deg)');
-    $('[inkscape\\:label=arm1]').css('top', armMovePixels);
-    $('[inkscape\\:label=arm1]').css('transform', 'rotate(' + armRotatePixels + 'deg)');
-    $('[inkscape\\:label=arm2]').css('top', armMovePixels);
-    $('[inkscape\\:label=arm2]').css('transform', 'rotate(' + armRotatePixels + 'deg)');
-    window.setTimeout(function() {
-        breathe()
-    }, 1200)
-}
 
 function blink() {
     console.log($('[inkscape\\:label=face]').css('display'));

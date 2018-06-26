@@ -78,24 +78,34 @@
     background-image: linear-gradient(0deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 .land {
-    background: #999;
-    background-image: none;
     height: 220px;
-    width: 540px;
+    width: 740px;
     position: absolute;
-    bottom: 20px;
+    top: 250px;
     margin: 30px;
     box-sizing: border-box;
-    border-radius: 30px;
-    background-image: linear-gradient(170deg, #84fab0 0%, #8fd3f4 100%);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    left: 150px;
-    box-shadow: 5px 15px 25px #99baf0;
+    left: 60px;
 }
-.pet svg {
-    top: -170px;
+.pet {
     position: absolute;
-    left: 40px;
+    top: 180px;
+    left: 220px;
+    z-index: 10;
+}
+.pet:after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 20px;
+    background: #8d7684;
+    opacity: 0.2;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 40px / 10px;
+    position: absolute;
+    top: 270px;
+    left: 86px;
+    z-index: -1;
 }
 [inkscape\:label=top], 
 [inkscape\:label=body], 
@@ -105,9 +115,14 @@
 [inkscape\:label=arm2], 
 [inkscape\:label=leg1], 
 [inkscape\:label=leg2] {
-    transition: all 1s;
-    position: relative;
 }
+.bean {
+    position: absolute;
+    top: 440px;
+    left: 490px;
+    z-index: 10;
+}
+
 .bean a {
     display: block;
     background: yellow;
@@ -116,8 +131,22 @@
     -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     transform: rotate(30deg);
-    margin: auto;
-    margin-top: 50px;
+}
+
+.bean:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 15px;
+    background: #8d7684;
+    opacity: 0.2;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 40px / 10px;
+    position: absolute;
+    top: 41px;
+    left: -6px;
+    z-index: -1;
 }
 
 .text-blue {
@@ -136,4 +165,9 @@
     display: inline-block;
     margin: 0 0.5rem;
     color: #6b82a7;
+}
+
+.land img {
+    position: absolute;
+    top: 0;
 }

@@ -31,13 +31,14 @@
         <div class="row">
             <div class="col-8">
                 <div class="world">
+                    <div class="pet">
+                        <?php $this->load->view('pets/pet.svg') ?>
+                    </div>
+                    <div class="bean">
+                        <a href="<?php echo base_url('collect/bean') ?>"></a>
+                    </div>
                     <div class="land">
-                        <div class="pet">
-                            <?php $this->load->view('pets/pet.svg') ?>
-                        </div>
-                        <div class="bean">
-                            <a href="<?php echo base_url('collect/bean') ?>"></a>
-                        </div>
+                        <img src="<?php echo base_url('svg/land/default.svg') ?>">
                     </div>
                 </div>
             </div>
@@ -105,5 +106,7 @@
         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://tabler.github.io/tabler/assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="http://animejs.com/anime.min.js"></script>
+    <script src="<?php echo base_url('js/script.js') ?>"></script>
 </body>
 </html>
