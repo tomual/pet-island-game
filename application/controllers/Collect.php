@@ -5,7 +5,10 @@ class Collect extends MY_Controller {
 
 	public function bean()
 	{
-		$this->collection_model->collect($this->user->id);
+		$collected = $this->collection_model->collect($this->user->id);
+		if($collected) {
+			$this->currency_model->add_beans($this->user->id, 12);
+		}
 		redirect();
 	}
 }

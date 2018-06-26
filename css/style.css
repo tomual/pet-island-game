@@ -131,3 +131,9 @@
 .text-purple {
     color: #a55eea;
 }
+
+.middot {
+    display: inline-block;
+    margin: 0 0.5rem;
+    color: #6b82a7;
+}

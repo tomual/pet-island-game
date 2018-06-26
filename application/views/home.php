@@ -12,13 +12,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="row mt-6">
+        <div class="row pt-6">
             <div class="col-8">
                 <h1 class="title">cocobox</h1>
             </div>
             <div class="col text-right">
                 <?php if ($this->user): ?>
-                    <div class="menu-authed"><a href="<?php echo base_url("user/{$this->user->user_id}") ?>"><?php echo $this->user->first_name ?></a> | <a href="<?php echo base_url('user/logout') ?>">Log Out</a></div>
+                    <div class="menu-authed">
+                        <a href="<?php echo base_url("user/{$this->user->user_id}") ?>"><?php echo $this->user->first_name ?></a> <span class="middot">&middot;</span> 
+                        <i class="fe fe-box mr-1"></i><?php echo $this->currency_model->get_beans() ?> <span class="middot">&middot;</span>
+                        <a href="<?php echo base_url('user/logout') ?>">Log Out</a>
+                    </div>
                 <?php else: ?>
                     <div class="menu-guest"><a href="<?php echo base_url('user/login') ?>">Log In</a> | <a href="<?php echo base_url('user/signup') ?>">Sign Up</a></div>
                 <?php endif ?>
