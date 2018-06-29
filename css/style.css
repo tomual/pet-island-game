@@ -91,6 +91,7 @@
     top: 180px;
     left: 220px;
     z-index: 10;
+    transition: all 4s;
 }
 .pet:after {
     content: "";
@@ -122,6 +123,21 @@
     left: 490px;
     z-index: 10;
 }
+
+
+[inkscape\:label=arm1] {
+    transform-origin: 110px 200px;
+}
+[inkscape\:label=arm2] {
+    transform-origin: 150px 200px;
+}
+[inkscape\:label=leg1] {
+    transform-origin: 110px 240px;
+}
+[inkscape\:label=leg2] {
+    transform-origin: 160px 260px;
+}
+
 
 .bean a {
     display: block;
