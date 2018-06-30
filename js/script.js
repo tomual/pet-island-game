@@ -49,12 +49,35 @@ function breathe() {
     if (leg2) { leg2.pause(); }
 }
 
-function walk() {
+function walk(x, y) {
+
+    var originX = parseInt($('#pet').css('left'));
+    var originY = parseInt($('#pet').css('top'));
+
+    var currentX = $('#pet').position().left - originX;
+    var currentY = $('#pet').position().top - originY;
+
+    var a = currentX - x;
+    var b = currentY - y;
+    var c = Math.sqrt( a*a + b*b );
+
+    var duration = c * 20;
+
+    pet = anime({
+        targets: '#pet',
+        translateY: x,
+        translateX: y,
+        duration: duration,
+        easing: 'linear',
+        complete: function() {
+            breathe();
+        }
+    });
+
     arm1 = anime.timeline({
         targets: '#layer4',
         easing: 'easeInOutSine',
         direction: 'alternate',
-        duration: 800,
         loop: true
     });
     arm1
@@ -69,7 +92,6 @@ function walk() {
         targets: '#layer5',
         easing: 'easeInOutSine',
         direction: 'alternate',
-        duration: 800,
         loop: true
     });
     arm2
@@ -113,6 +135,7 @@ function walk() {
 $(document).ready(function() {
     blink();
     breathe();
+    move();
 });
 
 function blink() {
@@ -128,15 +151,17 @@ function blink() {
     }, 50);
 }
 
-function move(top, left) {
-    walk();
-    $('.pet').css('top', top);
-    $('.pet').css('left', left);
-    setTimeout(function() {
-        breathe();
-    }, 4000);
+function move() {
+    window.setTimeout(function() {
+        walk(getRandomInt(200), getRandomInt(200));
+        move();
+    }, getRandomInt(6, 6) * 1000)
 }
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+function getRandomInt(min, max) {
+    if(!max) {
+        max = min;
+        min = 0;
+    }
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

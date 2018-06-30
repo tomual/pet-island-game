@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-8">
                 <div class="world">
-                    <div class="pet">
+                    <div class="pet" id="pet">
                         <?php $this->load->view('pets/pet.svg') ?>
                     </div>
                     <div class="bean">
