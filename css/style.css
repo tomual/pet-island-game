@@ -65,7 +65,7 @@
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 800px;
 }
 
 .world {
@@ -78,35 +78,14 @@
     background-image: linear-gradient(0deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 .land {
-    height: 220px;
-    width: 740px;
-    position: absolute;
-    top: 250px;
-    margin: 30px;
     box-sizing: border-box;
-    left: 60px;
 }
 .pet {
     position: absolute;
-    top: 180px;
-    left: 220px;
+    transition: all 2s;
     z-index: 10;
 }
-.pet:after {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 20px;
-    background: #8d7684;
-    opacity: 0.2;
-    -moz-border-radius: 100px / 50px;
-    -webkit-border-radius: 100px / 50px;
-    border-radius: 40px / 10px;
-    position: absolute;
-    top: 270px;
-    left: 86px;
-    z-index: -1;
-}
+
 [inkscape\:label=top], 
 [inkscape\:label=body], 
 [inkscape\:label=ears], 
@@ -118,9 +97,6 @@
 }
 .bean {
     position: absolute;
-    top: 440px;
-    left: 490px;
-    z-index: 10;
 }
 
 
@@ -148,22 +124,6 @@
     transform: rotate(30deg);
 }
 
-.bean:after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 15px;
-    background: #8d7684;
-    opacity: 0.2;
-    -moz-border-radius: 100px / 50px;
-    -webkit-border-radius: 100px / 50px;
-    border-radius: 40px / 10px;
-    position: absolute;
-    top: 41px;
-    left: -6px;
-    z-index: -1;
-}
-
 .text-blue {
     color: #467fcf;
 }
@@ -180,9 +140,4 @@
     display: inline-block;
     margin: 0 0.5rem;
     color: #6b82a7;
-}
-
-.land img {
-    position: absolute;
-    top: 0;
 }

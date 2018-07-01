@@ -5,12 +5,7 @@ var body = null;
 var leg1 = null;
 var leg2 = null;
 
-var leftBound = 40;
-var rightBound = 608;
-var topBound = 70;
-var bottomBound = 320;
-
-function breathe() {
+function animeBreathe() {
     head = anime({
         targets: '#layer11',
         translateY: 3,
@@ -50,130 +45,75 @@ function breathe() {
         duration: 1000,
         delay: 300
     });
-    if (leg1) { leg1.pause(); }
-    if (leg2) { leg2.pause(); }
+    if (head) {
+        head.play();
+    }
+    if (leg1) {
+        leg1.pause();
+    }
+    if (leg2) {
+        leg2.pause();
+    }
 }
 
-function walk(x, y) {
-
-    if(getRandomInt(1)) {
-        x = x * -1;
-    }
-    if(getRandomInt(1)) {
-        y = y * -1;
-    }
-
-    var originX = parseInt($('#pet').css('left'));
-    var originY = parseInt($('#pet').css('top'));
-
-    var currentX = $('#pet').position().left - originX;
-    var currentY = $('#pet').position().top - originY;
-
-    var destinationX = currentX + x;
-    var destinationY = currentY + y;
-
-    console.log(x);
-    console.log(y);
-
-    var distance = Math.sqrt( x*x + y*y );
-    var duration = distance * 20;
-
-    if(
-        destinationX < (leftBound - originX) || 
-        destinationX > (rightBound - originX) || 
-        destinationY < (topBound - originY) || 
-        destinationY > (bottomBound - originY) ) { 
-        destinationX = currentX;
-        destinationY = currentY;
-        duration = 0;
-    }
-
-
-    if(currentX > destinationX) {
-        faceDirection = -1;
-    } else {
-        faceDirection = 1;
-    }
-    
-
-    pet = anime({
-        targets: '#pet',
-        translateX: destinationX,
-        translateY: destinationY,
-        scaleX: {
-          value: faceDirection,
-          duration: 0
-        },
-        duration: duration,
-        easing: 'linear',
-        complete: function() {
-            updateZ();
-            breathe();
-        }
-    });
-
+function animeWalk() {
     arm1 = anime.timeline({
         targets: '#layer4',
         easing: 'easeInOutSine',
         direction: 'alternate',
         loop: true
     });
-    arm1
-    .add({
+    arm1.add({
         rotate: 15,
-    })
-    .add({
+    }).add({
         rotate: -20,
     });
-
     arm2 = anime.timeline({
         targets: '#layer5',
         easing: 'easeInOutSine',
         direction: 'alternate',
         loop: true
     });
-    arm2
-    .add({
+    arm2.add({
         rotate: -15,
-    })
-    .add({
+    }).add({
         rotate: 20,
     });
-
     leg1 = anime.timeline({
         targets: '#layer6',
         easing: 'easeInOutSine',
         direction: 'alternate',
         loop: true
     });
-    leg1
-    .add({
+    leg1.add({
         rotate: -10,
-    })
-    .add({
+    }).add({
         rotate: 10,
     });
-
     leg2 = anime.timeline({
         targets: '#layer7',
         easing: 'easeInOutSine',
         direction: 'alternate',
         loop: true
     });
-    leg2
-    .add({
+    leg2.add({
         rotate: 10,
-    })
-    .add({
+    }).add({
         rotate: -10,
     });
-    head.pause();
+    if (head) {
+        head.pause();
+    }
+    if (leg1) {
+        leg1.play();
+    }
+    if (leg2) {
+        leg2.play();
+    }
 }
-
 $(document).ready(function() {
     blink();
-    breathe();
-    move();
+    animate();
 });
 
 function blink() {
@@ -188,21 +128,45 @@ function blink() {
     }, 50);
 }
 
-function move() {
+function walk(ms) {
+    var leftPixels = parseInt($('#pet').css('margin-left'));
+    if(checkBounds(leftPixels)) {
+        animeWalk();
+        var leftPercent = leftPixels / $(window).width() * 100;
+        console.log($('#pet').css('margin-left'));
+        $('#pet').css('margin-left', leftPercent + 5 + '%');
+    }
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function breathe(ms) {
+    animeBreathe();
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function animate() {
+    await walk(2000);
+    await breathe(2000);
     window.setTimeout(function() {
-        walk(getRandomInt(80, 150), getRandomInt(80, 150));
-        move();
-    }, getRandomInt(6, 6) * 1000)
+        animate();
+    }, 1000)
 }
 
 function getRandomInt(min, max) {
-    if(!max) {
+    if (!max) {
         max = min;
         min = 0;
     }
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function updateZ() {
-    $('#pet')
+$(window).resize(function() {
+    if ($(window).width() < 768) {
+        var width = $(window).width() * 0.33;
+        var scale = width / 250; 
+        $('#pet svg').css('transform', 'scale(' + scale + ')');
+    }
+});
+
+function checkBounds(x) {
+    return x < ($(window).width() / 2);
 }
