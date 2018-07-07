@@ -20,8 +20,8 @@
     <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#222222">
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="<?php echo base_url('js/vendor/modernizr-2.7.1.min.js') ?>"></script>
     <link href="<?php echo base_url('css/normalize.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('css/main.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('css/style.css') ?>" rel="stylesheet">

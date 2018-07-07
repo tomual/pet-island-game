@@ -1,9 +1,7 @@
 <?php $this->load->view('header') ?>
 <div class="col-lg-4 offset-lg-4">
     <h1>Sign Up</h1>
-    <?php if($this->session->flashdata('error')): ?>
-    <div class="error"><?php echo $this->session->flashdata('error') ?></div>
-    <?php endif ?>
+    <?php alerts() ?>
     <form method="post">
         <div class="form-group">
             <label for="username">Username</label>
