@@ -5,6 +5,6 @@ class World extends Authenticated_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+		$this->load->view('world/world');
 	}
 }
