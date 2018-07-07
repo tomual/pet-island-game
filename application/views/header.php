@@ -28,29 +28,26 @@
     <link href="<?php echo base_url('css/style.css') ?>" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Title</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url() ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('world') ?>">World</a>
+                    <a class="nav-link" href="<?php echo base_url('page') ?>">Page</a>
                 </li>
             </ul>
             <div class="my-2 my-lg-0">
                 <ul class="navbar-nav mr-auto">
                     <?php if ($this->user): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url("settings/edit") ?>"><?php echo $this->user->username ?></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url('user/logout') ?>"><?php echo $this->currency_model->get_beans() ?></a>
+                            <a class="nav-link" href="<?php echo base_url('settings/edit') ?>"><?php echo $this->user->username ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url('user/logout') ?>">Log Out</a>
