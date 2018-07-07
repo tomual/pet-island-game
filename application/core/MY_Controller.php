@@ -12,3 +12,15 @@ class MY_Controller extends CI_Controller {
         }
     }
 }
+
+class Authenticated_Controller extends MY_Controller {
+
+    public function __construct()
+    {
+        parent::__construct();
+        if(!$this->session->userdata('user_id')) {
+        	$this->session->set_flashdata('error', 'Please log in.');
+            redirect('user/login');
+        }
+    }
+}
