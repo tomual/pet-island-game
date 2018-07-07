@@ -1,3 +1,46 @@
 body {
-	
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #1C242D;
+    color: #cccccc;
+}
+
+.navbar-dark {
+	background: #242F39;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #265e7d;
+    border-color: #234254;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #2e6a8c;
+    border-color: #234254;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #356f90;
+    border-color: #234254;
+}
+
+.btn {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 0.8rem;
+	padding: 0.5rem 1rem;
+}
+
+a, a:visited {
+	color: #4ba2d2;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
 }

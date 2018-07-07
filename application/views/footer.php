@@ -4,6 +4,5 @@
 		<script src="<?php echo base_url('js/helper.js') ?>"></script>
 		<script src="<?php echo base_url('js/main.js') ?>"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url('css/script.css') ?>"></script>
 	</body>
 </html>
