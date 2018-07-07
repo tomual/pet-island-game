@@ -47,7 +47,7 @@
                 <ul class="navbar-nav mr-auto">
                     <?php if ($this->user): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url("user/{$this->user->id}") ?>"><?php echo $this->user->username ?></a>
+                            <a class="nav-link" href="<?php echo base_url("settings/edit") ?>"><?php echo $this->user->username ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url('user/logout') ?>"><?php echo $this->currency_model->get_beans() ?></a>
