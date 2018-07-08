@@ -18,11 +18,8 @@ class User extends MY_Controller {
     public function signup()
     {
         if($this->input->method() == 'post') {
-            // $this->form_validation->set_rules('name', 'Group Name', 'required');
             $this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
-            // $this->form_validation->set_rules('first_name', 'First Name', 'required');
-            // $this->form_validation->set_rules('last_name', 'Last Name', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
             $this->form_validation->set_rules('password2', 'Password Confirmation', 'required|matches[password]');
 
@@ -32,8 +29,6 @@ class User extends MY_Controller {
                     'username' => $this->input->post('username'),
                     'email' => $this->input->post('email'),
                     'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-                    'first_name' => $this->input->post('first_name'),
-                    'last_name' => $this->input->post('last_name'),
                 );
                 $id = $this->user_model->create($data);
                 $user = $this->user_model->log_in($data['email'], $this->input->post('password'));
@@ -43,6 +38,7 @@ class User extends MY_Controller {
                     redirect(base_url());
                 } else {
                     $this->session->set_flashdata('error', 'Failed to create user account.');
+                    redirect('users/signup');
                 }
             }
         }
@@ -66,6 +62,7 @@ class User extends MY_Controller {
                     redirect(base_url());
                 } else {
                     $this->session->set_flashdata('error', 'Invalid login.');
+                    redirect('users/login');
                 }
             }
         }
