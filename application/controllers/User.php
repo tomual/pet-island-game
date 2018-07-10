@@ -38,7 +38,7 @@ class User extends MY_Controller {
                     redirect(base_url());
                 } else {
                     $this->session->set_flashdata('error', 'Failed to create user account.');
-                    redirect('users/signup');
+                    redirect('user/signup');
                 }
             }
         }
@@ -62,7 +62,7 @@ class User extends MY_Controller {
                     redirect(base_url());
                 } else {
                     $this->session->set_flashdata('error', 'Invalid login.');
-                    redirect('users/login');
+                    redirect('user/login');
                 }
             }
         }

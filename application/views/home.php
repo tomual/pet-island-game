@@ -1,13 +1,13 @@
 <?php $this->load->view('header') ?>
 <div class="col">
-	<h1>CuteIgniter</h1>
+	<h1 class="my-5">CuteIgniter</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	<h3>Features</h3>
+	<h3 class="mt-5">Features</h3>
 	<ul class="py-4">
 		<li>
 			User authentication
