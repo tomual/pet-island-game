@@ -48,3 +48,11 @@ CodeIgniter flashdata can be used to display alerts in the form of Bootstrap ale
 Allowed types are `success`, `error` and `info`.
 * In the view - `<?php alerts() ?>`
 * Setting the data - `$this->session->set_flashdata('error', 'Invalid login.');`
+
+## Screenshots
+
+![Home page](https://raw.githubusercontent.com/tomual/cuteigniter/master/img/home.PNG)
+
+![Login form](https://raw.githubusercontent.com/tomual/cuteigniter/master/img/login.PNG)
+
+![Sign up form showing validation and alerts](https://raw.githubusercontent.com/tomual/cuteigniter/master/img/signup.PNG)
