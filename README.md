@@ -16,6 +16,13 @@ CodeIgniter with user authentication, Bootstrap 4 and HTML5 Boilerplate.
   * Form validation with error styling
 * HTML5 Boilerplate
 
+## Installation
+
+* Extract files to file server running PHP
+* Run tables.sql on a database
+* Update `config/database.php` with database details
+* Update `config/config.php` to set `base_url` as the site URL
+
 ## Examples
 
 Controllers are to extend MY_Controller.
