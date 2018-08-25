@@ -14,3 +14,13 @@ function alerts() {
         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">' . $ci->session->flashdata('success') . $close . '</div>';
     }
 }
+
+function set_title($title) {
+    $ci =& get_instance();
+    $ci->title = $title;
+}
+
+function get_title() {
+    $ci =& get_instance();
+    return $ci->title ?? null;
+}

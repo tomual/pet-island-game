@@ -5,6 +5,7 @@ class Page extends Authenticated_Controller {
 
 	public function index()
 	{
+        set_title('Page');
 		$this->load->view('page');
 	}
 }

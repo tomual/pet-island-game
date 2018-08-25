@@ -42,7 +42,8 @@ class User extends MY_Controller {
                 }
             }
         }
-        $this->load->view('users/signup');
+        set_title('Sign Up');
+        $this->load->view('user/signup');
     }
 
     public function login()
@@ -66,7 +67,8 @@ class User extends MY_Controller {
                 }
             }
         }
-        $this->load->view('users/login');
+        set_title('Log In');
+        $this->load->view('user/login');
     }
 
     public function logout()
@@ -88,7 +90,8 @@ class User extends MY_Controller {
                 redirect('user/forgot_password');
             }
         }
-        $this->load->view('users/forgot_password');
+        set_title('Forgot Password');
+        $this->load->view('user/forgot_password');
     }
 
     public function reset_password($token)
@@ -113,6 +116,7 @@ class User extends MY_Controller {
                 redirect('user/login');
             }
         }
-        $this->load->view('users/reset_password');
+        set_title('Reset Password');
+        $this->load->view('user/reset_password');
     }
 }
