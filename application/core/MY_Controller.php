@@ -10,20 +10,6 @@ class MY_Controller extends CI_Controller {
         if($this->session->userdata('id')) {
             $this->user = $this->session->userdata('user');
         }
-        $this->metadata = new class{};
-        $this->metadata->topics = $this->get_topics();
-    }
-
-    function get_topics()
-    {
-        $topics = array(
-            'general' => 'MapleStory General',
-            'market' => 'MapleStory Market',
-            'games' => 'Video Games',
-            'irl' => 'IRL',
-            'screenshot' => 'Screenshot'
-        );
-        return $topics;
     }
 }
 

@@ -24,18 +24,3 @@ function get_title() {
     $ci =& get_instance();
     return $ci->title ?? null;
 }
-
-function dd($thing) {
-    echo "<pre>";
-    print_r ($thing);
-    exit();
-}
-
-function process_post($post) {
-    preg_match('/^#([0-9]+)/', $post, $matches);
-    if ($matches) {
-        $html = "<span class='quoting' data-quote-post-id='{$matches[1]}'>Replying to {$matches[0]}</span>";
-        $post = preg_replace('/^(#[0-9]+)/', $html, $post);
-    }
-    return nl2br($post);
-}
