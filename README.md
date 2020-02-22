@@ -19,7 +19,9 @@ CodeIgniter with user authentication, Bootstrap 4 and HTML5 Boilerplate.
 ## Installation
 
 * Extract files to file server running PHP
-* Run tables.sql on a database
+* Create the database you intend to use
+* Run sessions.sql to create sessions table
+* Run user.sql to create authentication tables
 * Update `config/database.php` with database details
 * Update `config/config.php` to set `base_url` as the site URL
 
