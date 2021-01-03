@@ -24,3 +24,10 @@ function get_title() {
     $ci =& get_instance();
     return $ci->title ?? null;
 }
+
+function dd($item)
+{
+    echo '<pre>';
+    print_r($item);
+    echo '</pre>';
+}

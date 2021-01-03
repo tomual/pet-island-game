@@ -14,7 +14,7 @@ class User_model extends CI_Model {
         $user = $this->db->get()->first_row();
         if($user) {
             if(password_verify($password, $user->password)) {
-                $this->update_login($user);
+                $this->update_login($user->id);
                 return $user;
             }
         }
@@ -106,14 +106,17 @@ class User_model extends CI_Model {
         return $this->db->affected_rows();
     }
 
-    public function update_login($user)
+    public function update_login($id)
     {
         $data = array(
             'ip' => $_SERVER['REMOTE_ADDR'],
-            'user_agent' => $_SERVER['HTTP_USER_AGENT']
+            'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+            'last_login' => date('Y-m-d H:i:s'),
+            'modified' => date('Y-m-d H:i:s'),
+            'modified_by' => $id
         );
         $this->db->set($data);
-        $this->db->where('id', $user->id);
+        $this->db->where('id', $id);
         $this->db->update('users');
         return $this->db->affected_rows();
     }

@@ -29,6 +29,7 @@ class User extends MY_Controller {
                     'username' => $this->input->post('username'),
                     'email' => $this->input->post('email'),
                     'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                    'created' => date('Y-m-d H:i:s')
                 );
                 $id = $this->user_model->create($data);
                 $user = $this->user_model->log_in($data['email'], $this->input->post('password'));
