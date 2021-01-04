@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Settings extends Authenticated_Controller {
+class Settings extends Authenticated_Controller
+{
 
     public function __construct()
     {
@@ -11,39 +12,38 @@ class Settings extends Authenticated_Controller {
     }
 
     public function index()
-	{
-		$this->edit();
-	}
+    {
+        $this->edit();
+    }
 
     public function edit()
     {
-        if($this->input->method() == 'post') {
+        if ($this->input->method() == 'post') {
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('current_password', 'Current Password', 'required');
             $this->form_validation->set_rules('password', 'Password', 'min_length[6]');
             $this->form_validation->set_rules('password2', 'Password Confirmation', 'matches[password]');
 
-            if ($this->form_validation->run() !== FALSE)
-            {
+            if ($this->form_validation->run() !== false) {
                 $email = $this->input->post('email');
                 $password = $this->input->post('password');
                 $user = $this->user_model->log_in($this->user->email, $this->input->post('current_password'));
-                if($user) {
+                if ($user) {
                     // If they entered a different email, check availability
-                    if($user->email != $email) {
-                        if($this->user_model->get_by_email($email)) {
+                    if ($user->email != $email) {
+                        if ($this->user_model->get_by_email($email)) {
                             $this->session->set_flashdata('error', 'This email is already associated with an account.');
                             redirect(base_url('settings/edit'));
                         }
                     }
                     $data = array(
-                        'email' => $email
+                        'email' => $email,
                     );
-                    if($password) {
+                    if ($password) {
                         $data['password'] = password_hash($password, PASSWORD_DEFAULT);
                     }
                     $update = $this->user_model->update($user->id, $data);
-                    if($update) {
+                    if ($update) {
                         $this->session->set_userdata('user', $this->user_model->get_by_email($email));
                         $this->session->set_flashdata('success', 'Account has been updated.');
                     }

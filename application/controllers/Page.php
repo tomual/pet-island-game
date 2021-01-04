@@ -1,11 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Page extends Authenticated_Controller {
+class Page extends Authenticated_Controller
+{
 
-	public function index()
-	{
+    public function index()
+    {
         set_title('Page');
-		$this->load->view('page');
-	}
+        $this->load->view('page');
+    }
 }

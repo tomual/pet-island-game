@@ -1,6 +1,6 @@
 # CuteIgniter
 
-CodeIgniter with user authentication, Bootstrap 4 and HTML5 Boilerplate.
+CodeIgniter with user authentication and Boostrap 4.
 
 ## Features
 
@@ -14,14 +14,12 @@ CodeIgniter with user authentication, Bootstrap 4 and HTML5 Boilerplate.
 * Bootstrap 4
   * Alerts with CodeIgniter flashdata
   * Form validation with error styling
-* HTML5 Boilerplate
 
 ## Installation
 
 * Extract files to file server running PHP
 * Create the database you intend to use
-* Run sessions.sql to create sessions table
-* Run user.sql to create authentication tables
+* Run tables.sql to create authentication tables
 * Update `config/database.php` with database details
 * Update `config/config.php` to set `base_url` as the site URL
 

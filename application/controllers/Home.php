@@ -1,11 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends MY_Controller {
+class Home extends MY_Controller
+{
 
-	public function index()
-	{
+    public function index()
+    {
         set_title('Welcome');
-		$this->load->view('home');
-	}
+        $this->load->view('home');
+    }
 }
