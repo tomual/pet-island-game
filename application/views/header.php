@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <meta http-equiv="cleartype" content="on">
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('css/bootstrap/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('css/style.css') ?>" rel="stylesheet">
 </head>
 <body>
